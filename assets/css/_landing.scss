@@ -1,0 +1,63 @@
+.landing {
+  background-color: #D9E2EC;
+  margin-top: 100px;
+  h1 {
+    color: #38BEC9;
+    font-size: 80px;
+    line-height: 70px;
+  }
+  h2 {
+    color: #486581;
+    font-size: 20px;
+  }
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero {
+    width: 800px;
+    margin: auto;
+    padding: 150px 200px 150px 200px;
+    background-color: #FFFFFF;
+  }
+
+  form {
+    margin-top: 20px;
+
+    input[type="text"], button {
+      display: block;
+      width: 100%;
+      letter-spacing: 1px;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    input[type="text"] {
+      border: 1px solid #38BEC9;
+      color: #38BEC9;
+      background-color: #E0FCFF;
+      box-sizing: border-box;
+      &:focus{
+        outline: none;
+        background-color: #044E54;
+        color: #54D1DB;
+        transition: 0.3s;
+      }
+    }
+
+    button {
+      margin-top: 5px;
+      background-color: #54D1DB;
+      color: #E0FCFF;
+      cursor: pointer;
+      border: 1px solid #E0FCFF;
+      &:focus{
+        border: 1px solid #54D1DB;
+        color: #54D1DB;
+        background-color: #044E54;
+        outline: none;
+      }
+    }
+  }
+}

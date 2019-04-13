@@ -1,1 +1,9 @@
-namedb
+<div class="hero">
+  <h1>nmdb</h1>
+  <h2>Helping you name things gooder</h2>
+
+  <form>
+    <input name="email" type="text" placeholder="Email Address" />
+    <button>Join Mailing List</button>
+  </form>
+</div>

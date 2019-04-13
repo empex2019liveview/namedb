@@ -3,6 +3,6 @@ defmodule NamedbWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
-    assert html_response(conn, 200) =~ "namedb"
+    assert html_response(conn, 200) =~ "nmdb"
   end
 end
