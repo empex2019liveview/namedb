@@ -18,8 +18,29 @@
   .hero {
     width: 800px;
     margin: auto;
-    padding: 150px 200px 150px 200px;
+    padding: 75px 100px 75px 100px;
     background-color: #FFFFFF;
+  }
+
+  .error {
+    background-color: #FAB8D9;
+    border: 1px solid #DA4A91;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0 10px 0;
+    p {
+      margin: 0;
+      color: #9B1B5A;
+      font-size: 18px;
+    }
+  }
+
+  .thank-you {
+    p {
+      margin: 0;
+      color: #486581;
+      font-size: 18px;
+    }
   }
 
   form {
