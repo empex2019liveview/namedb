@@ -45,9 +45,17 @@ defmodule NamedbWeb.PageLiveView do
     email
     |> case do
       "" -> socket
-      "badinput" -> socket |> assign(:error, true)
-      _ -> socket |> assign(:email, email)
+      "badinput" -> socket |> fake_wait(5) |> assign(:error, true)
+      _ -> socket |> fake_wait(5) |> assign(:email, email)
     end
-    |> (fn socket -> {:noreply, socket} end).()
+    |> socket_reply()
   end
+
+  defp fake_wait(input, num_seconds) do
+    :timer.sleep(num_seconds * 1000)
+    input
+  end
+
+  defp socket_reply(socket, reply \\ :noreply), do: {reply, socket}
+
 end
