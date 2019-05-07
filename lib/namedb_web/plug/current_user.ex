@@ -5,6 +5,7 @@ defmodule Namedb.Plugs.CurrentUser do
 
   def call(conn, _opts) do
     conn
+    |> lookup_flash()
     |> lookup_session()
     |> store_user()
   end
@@ -12,6 +13,12 @@ defmodule Namedb.Plugs.CurrentUser do
   defp lookup_session(conn) do
     conn
     |> get_session(:user)
+    |> set_if(conn)
+  end
+
+  defp lookup_flash(conn) do
+    conn
+    |> Phoenix.Controller.get_flash(:user)
     |> set_if(conn)
   end
 

@@ -24,7 +24,11 @@ defmodule NamedbWeb.PageLiveView do
         socket |> fake_wait(5) |> assign(:email, nil) |> assign(:error, true) |> socket_reply()
 
       _ ->
-        socket |> fake_wait(5) |> assign(:email, email) |> socket_reply()
+        socket
+        |> fake_wait(5)
+        |> put_flash(:user, email)
+        |> redirect(to: "/account")
+        |> socket_reply(:stop)
     end
   end
 
