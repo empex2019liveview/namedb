@@ -9,6 +9,7 @@ defmodule NamedbWeb.Router do
     plug Phoenix.LiveView.Flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug(Namedb.Plugs.CurrentUser)
   end
 
   pipeline :api do
@@ -19,6 +20,8 @@ defmodule NamedbWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/logout", PageController, :logout
+    get "/account", AccountController, :index
   end
 
   # Other scopes may use custom stacks.

@@ -7,4 +7,11 @@ defmodule NamedbWeb.PageController do
     |> assign(:body_template, "landing")
     |> live_render(NamedbWeb.PageLiveView, session: %{})
   end
+
+  def logout(conn, _params) do
+    conn
+    |> configure_session(drop: true)
+    |> clear_session()
+    |> redirect(to: "/")
+  end
 end

@@ -1,0 +1,4 @@
+<div class="hero">
+  <h1>namdb</h1>
+  <p>Your account <%= @user %></p>
+</div>
