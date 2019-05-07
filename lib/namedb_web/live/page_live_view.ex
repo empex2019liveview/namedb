@@ -17,11 +17,15 @@ defmodule NamedbWeb.PageLiveView do
   def handle_info({:store_email, email}, socket) do
     email
     |> case do
-      "" -> socket
-      "badinput" -> socket |> fake_wait(5) |> assign(:email, nil) |> assign(:error, true)
-      _ -> socket |> fake_wait(5) |> assign(:email, email)
+      "" ->
+        socket |> socket_reply()
+
+      "badinput" ->
+        socket |> fake_wait(5) |> assign(:email, nil) |> assign(:error, true) |> socket_reply()
+
+      _ ->
+        socket |> fake_wait(5) |> assign(:email, email) |> socket_reply()
     end
-    |> socket_reply()
   end
 
   defp fake_wait(input, num_seconds) do
